@@ -10,7 +10,7 @@ The package originally was under MIT Licence, but this changed starting `2023.x.
 
 ## How does QuestPDF verify the licensing
 
-Digging through the source code, I only found a `ValidateLicense()` function that only checks the identifier `QuestPDF.Settings.License` for validation, I could not find any networks flights for license verification. Verfied by sifting through all `http` urls in the source. Also [this](https://www.questpdf.com/license/configuration.html#code-change:~:text=The%20library%20does%20not%20require%20any%20license%20key.%20We%20trust%20our%20users%2C%20and%20therefore%20the%20process%20is%20simple.) from their official docs verify the findings.
+Digging through the source code, I only found a `ValidateLicense()` function that only checks the identifier `QuestPDF.Settings.License` for validation, I could not find any networks flights for license verification. Verfied by sifting through all `http` urls in the source. Also [this](https://www.questpdf.com/license/configuration.html#code-change:~:text=The%20library%20does%20not%20require%20any%20license%20key.%20We%20trust%20our%20users%2C%20and%20therefore%20the%20process%20is%20simple.) from their official docs verify the findings. **This may however change anytime in the future.**
 
 I could analyze the network requests but I don't know if I am allowed to install wireshark on company laptops. 
 
