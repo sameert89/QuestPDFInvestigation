@@ -11,7 +11,7 @@ namespace QuestPDF.ExampleInvoice
             // TODO: Please make sure that you are eligible to use the Community license.
             // To learn more about the QuestPDF licensing, please visit:
             // https://www.questpdf.com/pricing.html
-            Settings.License = LicenseType.Community;
+            Settings.License = LicenseType.Enterprise;
             
             // For documentation and implementation details, please visit:
             // https://www.questpdf.com/documentation/getting-started.html
