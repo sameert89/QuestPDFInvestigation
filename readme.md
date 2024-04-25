@@ -1,65 +1,19 @@
-<a href="https://www.questpdf.com/" target="_blank">
-  <img src="https://github.com/QuestPDF/example-invoice/raw/main/images/logo.svg" width="400"> 
-</a>
+# Exploration Findings
 
----
+## Are we allowed to use the latest community version at Zeiss
 
-[![QuestPDF Homepage](https://img.shields.io/badge/Homepage-blue?style=for-the-badge)](https://www.questpdf.com)
-[![Dotnet](https://img.shields.io/badge/platform-.NET-blue?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![GitHub Repo stars](https://img.shields.io/github/stars/QuestPDF/QuestPDF?style=for-the-badge)](https://github.com/QuestPDF/QuestPDF/stargazers)
-[![Nuget version](https://img.shields.io/nuget/v/QuestPdf?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![Nuget download](https://img.shields.io/nuget/dt/QuestPDF?style=for-the-badge)](https://www.nuget.org/packages/QuestPDF/)
-[![QuestPDF License](https://img.shields.io/badge/LICENSE%20details-Community%20MIT%20and%20professional-green?style=for-the-badge)](https://www.questpdf.com/pricing.html#license)
+Legally we are not allowed to do so, the latest version requires for companies with a scale as large as ours to get the **Enterprise License**.
 
-<br />
+## What version are we allowed to use then
 
-### QuestPDF is a modern open-source .NET library for PDF document generation. Offering comprehensive layout engine powered by concise and discoverable C# Fluent API.
+The package originally was under MIT Licence, but this changed starting `2023.x.x` version. Info from the author [here](https://github.com/QuestPDF/QuestPDF/issues/557#:~:text=This%20is%20correct.%20Only%20releases%202023.X.Y%20and%20beyond%20are%20under%20the%20new%20license.). Therefore the last version we are legally allowed to use is `22.12.x`. I have investigated the source code and it does have MIT license. It offered extended patches and support until **2024 Q1**.
 
-<img src="https://github.com/QuestPDF/QuestPDF-Documentation/blob/main/docs/public/previewer/animation.gif?raw=true" width="100%">
+## How does QuestPDF verify the licensing
 
-<table>
-<tr>
-    <td>👨‍💻</td>
-    <td>Design PDF documents using C# and employ a code-only approach. Utilize your version control system to its fullest potential.</td>
-</tr>
-<tr>
-    <td>🧱</td>
-    <td>Compose PDF document with a range of powerful and predictable structural elements, such as text, image, border, table, and many more.</td>
-</tr>
-<tr>
-    <td>⚙️</td>
-    <td>Utilize a comprehensive layout engine, specifically designed for PDF document generation and paging support.</td>
-</tr>
-<tr>
-    <td>📖</td>
-    <td>Write code using concise and easy-to-understand C# Fluent API. Utilize IntelliSense to quickly discover available options.</td>
-</tr>
-<tr>
-    <td>🔗</td>
-    <td>Don't be limited to any proprietary scripting language or format. Follow your experience and leverage all modern C# features.</td>
-</tr>
-<tr>
-    <td>⌛</td>
-    <td>Save time thanks to a hot-reload capability, allowing real-time PDF document preview without code recompilation.</td>
-</tr>
-</table>
+Digging through the source code, I only found a `ValidateLicense()` function that only checks the identifier `QuestPDF.Settings.License` for validation, I could not find any networks flights for license verification. Verfied by sifting through all `http` urls in the source. Also [this](https://www.questpdf.com/license/configuration.html#code-change:~:text=The%20library%20does%20not%20require%20any%20license%20key.%20We%20trust%20our%20users%2C%20and%20therefore%20the%20process%20is%20simple.) from their official docs verify the findings.
 
-<br />
+I could analyze the network requests but I don't know if I am allowed to install wireshark on company laptops. 
 
-<br />
+## About the warnings
 
-## Please help by giving a star
-
-Choosing a project dependency could be difficult. We need to ensure stability and maintainability of our projects. Surveys show that GitHub stars count play an important factor when assessing library quality. 
-
-⭐ Please give [this repository](https://github.com/QuestPDF/QuestPDF) a star. It takes seconds and help thousands of developers! ⭐
-
-## Let's get started
-
-Begin exploring the QuestPDF library today. You are 250 lines of C# code away from creating a fully functional PDF invoice implementation.
-
-Read the Getting Started tutorial to familiarize yourself with general library architecture, important layout structures as well as to better understand helpful patterns and practices. Easily start designing your PDF documents, reports, invoices and even more.
-
-[![Getting started tutorial](https://img.shields.io/badge/%F0%9F%9A%80%20read-getting%20started-blue?style=for-the-badge)](https://www.questpdf.com/getting-started.html)
-
-<img src="https://github.com/QuestPDF/QuestPDF-Documentation/blob/main/docs/public/invoice-small.png?raw=true" width="400px">
+I did set up a sample project and migrated it to the latest stable version, tried all license types but still did not see any warning. Source code [here](https://github.com/sameert89/QuestPDFInvestigation.git).
